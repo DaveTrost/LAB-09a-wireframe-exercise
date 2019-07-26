@@ -26,6 +26,7 @@ main section {
     display: flex;
     flex-wrap: wrap;
     max-width: 990px;
+    min-width: 500px;
     margin: auto;
 }
 main section img, main section div {
@@ -42,18 +43,38 @@ main section:first-of-type img {
     max-width: 300px;
 }
 
+main section:last-of-type {
+    padding-top: calc(400 / 960 * 100%);
+    position: relative;
+}
+/* This technique comes from https://www.w3schools.com/howto/howto_css_responsive_text.asp */
+@media screen and (min-width: 1020px) {
+    main section:last-of-type {
+        padding-top: 415px;
+    }
+}
+@media screen and (max-width: 515px) {
+    main section:last-of-type {
+        padding-top: 215px;
+    }
+}
 main section:last-of-type img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 47%;
-    height: 39%;
     max-width: 480px;
 }
+
 #featured-section-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
     display: flex;
     flex-direction: column;
     width: 47%;
-    height: 39%;
     max-width: 450px;
-    max-height: 400px;
+    max-height: 93%;
 }
 #featured-section-content h2 {
     font-family: sans-serif;
@@ -85,7 +106,7 @@ main section:last-of-type img {
     background-color: #999;
     box-shadow: 3px 3px 6px #bbb;
     transform: background-color;
-}
+} 
 
 
 footer {
